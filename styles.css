@@ -1,0 +1,211 @@
+@font-face {
+  font-family: "Young Serif";
+  src: url("assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+:root {
+  --main-clr: hsl(30, 10%, 34%);
+  --header-clr: hsl(24, 5%, 18%);
+  --accent-clr: hsl(14, 45%, 36%);
+  --prep-accent-clr: hsl(332, 51%, 32%);
+  --line-break-clr: hsl(30, 18%, 87%);
+
+  --main-bg-clr: hsl(30, 54%, 90%);
+  --accent-bg-clr: hsl(0, 0%, 100%);
+
+  --main-ff: "Outfit", sans-serif;
+  --accent-ff: "Young Serif", serif;
+
+  --main-fs: 1rem;
+  --header-fs: 2.5rem;
+  --accent-fs: 1.75rem;
+
+  --main-fw: 400;
+  --accent-fw: 600;
+
+  --mobile-threashold: 720px;
+}
+
+/* Relevant CSS reset */
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  color: var(--main-clr);
+  background-color: var(--main-bg-clr);
+
+  font-family: var(--main-ff);
+  font-size: var(--main-fs);
+  font-weight: var(--main-fw);
+}
+
+main {
+  max-width: 45rem;
+  margin: 0 auto;
+
+  background-color: var(--accent-bg-clr);
+}
+
+@media (min-width: 720px) {
+  main {
+    border-radius: 1.25rem;
+    margin: 7.25rem auto;
+  }
+
+  figure {
+    padding: 2.5rem;
+    padding-bottom: 0;
+  }
+
+  img {
+    border-radius: 0.625rem;
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--accent-ff);
+}
+
+h2,
+h3 {
+  font-weight: var(--main-fw);
+
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--header-clr);
+
+  font-size: var(--header-fs);
+  font-weight: var(--accent-fw);
+
+  line-height: 100%;
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  color: var(--accent-clr);
+
+  font-size: var(--accent-fs);
+}
+
+h3 {
+  color: var(--prep-accent-clr);
+}
+
+p {
+  line-height: 150%;
+}
+
+ul,
+ol {
+  display: grid;
+  gap: 0.75rem;
+}
+
+hr {
+  height: 1px;
+
+  background-color: var(--line-break-clr);
+
+  border: none;
+}
+
+.bold {
+  font-weight: var(--accent-fw);
+}
+
+.recipe-content {
+  display: grid;
+  gap: 1.5rem;
+
+  padding: 2rem;
+}
+
+.prep-time {
+  background-color: hsl(330, 100%, 98%);
+
+  padding: 1.5rem;
+
+  border-radius: 0.625rem;
+}
+
+/* These 2 rules put the bullet point further left than default */
+ul,
+ol {
+  padding-left: 1.625rem;
+}
+
+li {
+  padding-left: 0.875rem;
+}
+
+li::marker {
+  color: var(--accent-clr);
+}
+
+ol li::marker {
+  font-weight: var(--accent-fw);
+}
+
+.prep-time li::marker {
+  color: var(--prep-accent-clr);
+}
+
+tbody {
+  padding-top: 1rem;
+}
+
+table,
+tbody,
+tr {
+  display: block;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  padding: 0.75rem;
+  padding-left: 1.75rem;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--line-break-clr);
+}
+
+.nutrition-amount {
+  color: var(--accent-clr);
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+/* From original HTML file */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
